@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <style>
+      @import url("https://webfontworld.github.io/gmarket/GmarketSans.css");
+
+      * {
+        font-family: "GmarketSans";
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .section {
+        width: 100%;
+      }
+
+      .container {
+        position: relative;
+        max-width: 1200px;
+        height: 600px;
+        padding: 50px;
+        margin: auto;
+        background-color: rgb(42, 36, 36);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .section:nth-child(even) {
+        background-color: rgb(24, 32, 71);
+      }
+
+      h1 {
+        font-size: 100px;
+        color: #ffffff;
+        position: absolute;
+        top: 0;
+        margin: 0;
+        line-height: 120px;
+      }
+
+      .box {
+        width: 400px;
+        height: 400px;
+        margin: 10px;
+        background-color: rgb(149, 149, 149);
+      }
+
+      .poster {
+        width: 100%;
+        height: 500px;
+      }
+
+      .poster1 {
+        width: 100%;
+        height: 500px;
+      }
+
+      .poster2 {
+        width: 100%;
+        height: 500px;
+      }
+
+      .poster3 {
+        width: 100%;
+        height: 500px;
+      }
+
+      .poster4 {
+        width: 100%;
+        height: 500px;
+      }
+
+      .dignity {
+        width: 1000px;
+        height: 500px;
+        margin: -300px;
+        margin-top: 0px;
+      }
+
+      .unreality {
+        width: 1000px;
+        height: 500px;
+        margin: -300px;
+        margin-top: 0px;
+      }
+
+      .museum {
+        width: 1000px;
+        height: 500px;
+        margin: -300px;
+        margin-top: 0px;
+      }
+
+
+      .back-to-position {
+        opacity: 0;
+        transition: 1s;
+      }
+
+      .back-to-position.to-right {
+        transform: translateX(-150px);
+      }
+
+      .back-to-position.to-left {
+        transform: translateX(150px);
+      }
+
+      .show .back-to-position {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .show .back-to-position.delay-0 {
+        transition-delay: 0s;
+      }
+
+      .show .back-to-position.delay-1 {
+        transition-delay: 0.3s;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="section scroll-spy">
+      <div class="container">
+        <h1>Portfolio</h1>
+        <div class="box back-to-position to-left delay-1">
+          <img src="image/잡지.png" alt="" class="poster" />
+        </div>
+      </div>
+    </section>
+    <!--1 ================================================ -->
+
+    <section class="section scroll-spy">
+      <div class="container">
+        <h1>Hangul Day Poster</h1>
+        <div class="box back-to-position to-right delay-0">
+          <img src="image/한글날_카드뉴스.png" alt="" class="poster1" />
+        </div>
+        <div class="box back-to-position to-left delay-1">
+          <img src="image/우표 카드뉴스.png" alt="" class="poster2" />
+        </div>
+      </div>
+    </section>
+    <!--2 ================================================ -->
+
+    <section class="section scroll-spy">
+      <div class="container">
+        <h1>Poster Design</h1>
+        <div class="box back-to-position to-right delay-0">
+          <img src="image/책표지.jpg" alt="" class="poster3" />
+        </div>
+        <div class="box back-to-position to-left delay-1">
+          <img src="image/팀버랜드_포스터 copy.png" alt="" class="poster4" />
+        </div>
+      </div>
+    </section>
+    <!--3 ================================================ -->
+
+    <section class="section scroll-spy">
+      <div class="container">
+        <h1>Banner Design</h1>
+        <div class="box back-to-position to-right delay-0">
+          <img src="image/2201110278_전재원_패션베너.jpg"alt="" class="dignity" />
+        </div>
+      </div>
+    </section>
+    <!--4 ================================================ -->
+
+    <section class="section scroll-spy">
+      <div class="container">
+        <h1>Photoshop</h1>
+        <div class="box back-to-position to-right delay-0">
+          <img src="image/2201110278_전재원_비현실.jpg" alt="" class="unreality" />
+        </div>
+        <!-- <div class="box back-to-position to-left delay-1"></div> -->
+      </div>
+    </section>
+    <!--5 ================================================ -->
+      
+    <section class="section scroll-spy">
+      <div class="container">
+        <h1>Museum Photoshop</h1>
+        <div class="box back-to-position to-right delay-0">
+          <img src="image/유리병 작업.jpg" alt="" class="museum" />
+        </div>
+    </section>
+    <!--6 ================================================ -->
+
+    <!-- script -->
+    <script>
+      const spyEls = document.querySelectorAll(".section.scroll-spy");
+      const controller = new ScrollMagic.Controller();
+
+      spyEls.forEach(function (spyEl) {
+        new ScrollMagic.Scene({ triggerElement: spyEl })
+          .setClassToggle(spyEl, "show")
+          .addTo(controller);
+      });
+    </script>
+  </body>
+</html>
